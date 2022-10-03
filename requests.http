@@ -1,0 +1,47 @@
+### API-1 Create table todo
+GET http://localhost:3000/
+
+### API-1 Get All todos
+GET http://localhost:3000/todos/
+###Scenario-1
+GET http://localhost:3000/todos/?status=TO%20DO
+###Scenario-2
+GET http://localhost:3000/todos/?priority=HIGH
+###Scenario-3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+###Scenario-4
+GET http://localhost:3000/todos/?search_q=Buy
+###Scenario-5
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+###Scenario-6
+GET http://localhost:3000/todos/?category=HOME
+###Scenario-7
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+### API-2 Get Specific todos
+GET http://localhost:3000/todos/3/
+
+### API-3 list of all todos with a specific due date
+GET http://localhost:3000/agenda/?date=2021-04-04
+
+### API-4 Create Todo Item
+POST  http://localhost:3000/todos/
+Content-Type: application/json 
+
+{
+ "id": 6,
+ "todo": "Finalize event theme",
+ "priority": "LOW",
+ "status": "TO DO",
+ "category": "HOME",
+ "dueDate": "2021-02-22"
+}
+
+### API-5 Modify Specific todos
+PUT  http://localhost:3000/todos/3/
+Content-Type: application/json
+
+{"dueDate": "2021-02-22"} 
+
+### API-5 Delete Specific todos
+DELETE  http://localhost:3000/todos/6/
